@@ -1,0 +1,7 @@
+
+SELECT b.kategori,
+       SUM(d.subtotal) AS total_penjualan
+FROM detail_transaksi d
+JOIN barang b ON d.id_barang = b.id_barang
+WHERE d.jumlah >= 1
+GROUP BY b.kategori;
